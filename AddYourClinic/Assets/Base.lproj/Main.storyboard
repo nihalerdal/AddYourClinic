@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iqi-fg-0TO">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Request Health Records-->
+        <scene sceneID="Ve6-Io-F71">
+            <objects>
+                <viewController id="Iuh-7N-TG8" customClass="RequestHealthRecordsVC" customModule="AddYourClinic" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nWl-a2-uZ0">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8vK-me-fXp">
+                                <rect key="frame" x="30" y="397" width="330" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="vh6-7p-Adk"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemCyanColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Add Your Clinic"/>
+                                <connections>
+                                    <segue destination="W0T-4z-HZ7" kind="show" id="sH3-vA-ZF9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="b8a-qi-PUi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8vK-me-fXp" firstAttribute="leading" secondItem="b8a-qi-PUi" secondAttribute="leading" constant="30" id="1LU-98-JVD"/>
+                            <constraint firstItem="8vK-me-fXp" firstAttribute="centerX" secondItem="nWl-a2-uZ0" secondAttribute="centerX" id="1kp-2f-Tdx"/>
+                            <constraint firstItem="8vK-me-fXp" firstAttribute="centerY" secondItem="nWl-a2-uZ0" secondAttribute="centerY" id="FWJ-aJ-Sdm"/>
+                            <constraint firstItem="b8a-qi-PUi" firstAttribute="trailing" secondItem="8vK-me-fXp" secondAttribute="trailing" constant="30" id="g6w-BV-bhn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Request Health Records" id="6z0-qE-sTc"/>
+                    <connections>
+                        <outlet property="AddYourClinicButton" destination="8vK-me-fXp" id="zd4-Zn-Vaw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="inS-1g-6uS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-294" y="53"/>
+        </scene>
+        <!--Add Your ClinicVC-->
+        <scene sceneID="0Qw-Dw-co7">
+            <objects>
+                <viewController id="W0T-4z-HZ7" customClass="AddYourClinicVC" customModule="AddYourClinic" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4TO-ft-eQz">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xsN-cI-h9r">
+                                <rect key="frame" x="10" y="91" width="370" height="619"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wXW-IJ-sLb">
+                                <rect key="frame" x="30" y="718" width="330" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="cEz-gR-QF3"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemCyanColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Add Your Clinic"/>
+                                <connections>
+                                    <action selector="addClinic:" destination="W0T-4z-HZ7" eventType="touchUpInside" id="sat-Mu-l6n"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="20z-Fd-wQX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wXW-IJ-sLb" firstAttribute="centerX" secondItem="4TO-ft-eQz" secondAttribute="centerX" id="4rD-rW-RDs"/>
+                            <constraint firstItem="wXW-IJ-sLb" firstAttribute="leading" secondItem="20z-Fd-wQX" secondAttribute="leading" constant="30" id="7L9-8V-2bS"/>
+                            <constraint firstItem="wXW-IJ-sLb" firstAttribute="top" secondItem="xsN-cI-h9r" secondAttribute="bottom" constant="8" symbolic="YES" id="HuK-sP-Jda"/>
+                            <constraint firstItem="wXW-IJ-sLb" firstAttribute="top" secondItem="xsN-cI-h9r" secondAttribute="bottom" constant="8" symbolic="YES" id="JdI-GL-47C"/>
+                            <constraint firstItem="20z-Fd-wQX" firstAttribute="trailing" secondItem="xsN-cI-h9r" secondAttribute="trailing" constant="10" id="JnO-74-NXT"/>
+                            <constraint firstItem="20z-Fd-wQX" firstAttribute="bottom" secondItem="wXW-IJ-sLb" secondAttribute="bottom" constant="42" id="NAT-J0-p22"/>
+                            <constraint firstItem="20z-Fd-wQX" firstAttribute="trailing" secondItem="wXW-IJ-sLb" secondAttribute="trailing" constant="30" id="NZm-cM-vp7"/>
+                            <constraint firstItem="xsN-cI-h9r" firstAttribute="leading" secondItem="20z-Fd-wQX" secondAttribute="leading" constant="10" id="PfU-0I-smC"/>
+                            <constraint firstItem="xsN-cI-h9r" firstAttribute="top" secondItem="20z-Fd-wQX" secondAttribute="top" id="X3Z-ez-aOP"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="waS-Tr-3cE"/>
+                    <connections>
+                        <outlet property="AddYourClinic" destination="wXW-IJ-sLb" id="F58-VS-F09"/>
+                        <outlet property="mapView" destination="xsN-cI-h9r" id="0xk-dJ-MYY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R1U-Du-s4s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="532" y="53"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="OTL-o0-6eg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iqi-fg-0TO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FUJ-Va-N8J">
+                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Iuh-7N-TG8" kind="relationship" relationship="rootViewController" id="YiT-Ep-A0y"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YOi-Qd-yzA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1106" y="53"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemCyanColor">
+            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
